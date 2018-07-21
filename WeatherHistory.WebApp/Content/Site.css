@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.current-summary {
+    padding-bottom: 3%;
+}

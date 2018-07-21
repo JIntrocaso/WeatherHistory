@@ -1,0 +1,41 @@
+﻿@model WeatherHistory.WebApp.Models.DarkSkyForecast
+@{
+    ViewBag.Title = "Location Weather Conditions";
+}
+
+<div class="container-fluid">
+    <h2>Current Weather Information for @ViewBag.LocationName</h2>
+    <div class="clear"></div>
+    <div class="row">
+        <div class="container-fluid">
+            <div class="lead text-center current-summary">@Model.Currently.Summary</div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="w-100" for="lat">Lat & Long</label>
+                <span id="lat">@Model.Latitude.ToString("N4"), @Model.Longitude.ToString("N4")</span>
+            </div>
+            <div class="col-2">
+                <label class="w-100" for="actual-temp">Temperature</label>
+                <span id="actual-temp">@Model.Currently.Temperature.ToString("N0")</span>
+            </div>
+            <div class="col-2">
+                <label class="w-100" for="feels-temp">Feels Like</label>
+                <span id="feels-temp">@Model.Currently.ApparentTemperature.ToString("N0")</span>
+            </div>
+            <div class="col-2">
+                <label class="w-100" for="humidity">Humidity</label>
+                <span id="humidity">@Model.Currently.Humidity.ToString("P0")</span>
+            </div>
+            <div class="col-2">
+                <label class="w-100">Clouds</label>
+                <span id="weather-icon">@Model.Currently.Icon</span>
+                <i class="wi wi-@Model.Currently.Icon"></i>
+            </div>
+            <div class="col-2">
+                <label class="w-100" for="precip-prob">Chance Precip</label>
+                <span id="precip-prob">@Model.Currently.PrecipProbability.ToString("P0")</span>
+            </div>
+        </div>
+    </div>
+</div>
